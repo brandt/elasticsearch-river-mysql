@@ -45,7 +45,7 @@ Plugin activation and configuration
       "type" : "mysql",
       "streamer" : {
           "host" : "localhost",
-          "port" : 8080,
+          "port" : 999,
       },
       "mysql" : {
         # Future usage to configure mysql access from the river.  _

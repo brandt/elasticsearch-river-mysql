@@ -41,4 +41,8 @@ class Streamer(object):
     index.exposed = True
     index._cp_config = {"response.stream": True}
 
+cherrypy.config.update({'server.socket_host': '127.0.0.1',
+                         'server.socket_port': 999,
+                        })
+
 cherrypy.quickstart(Streamer())

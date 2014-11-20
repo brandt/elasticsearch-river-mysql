@@ -100,14 +100,14 @@ public class MysqlRiver extends AbstractRiverComponent implements River {
 		if (settings.settings().containsKey("streamer")) {
 			Map<String, Object> streamerSettings = (Map<String, Object>) settings.settings().get("streamer");
 			mysqlStreamHost = XContentMapValues.nodeStringValue(streamerSettings.get("host"), "127.0.0.1");
-			mysqlStreamPort = XContentMapValues.nodeIntegerValue(streamerSettings.get("port"), 8080);
+			mysqlStreamPort = XContentMapValues.nodeIntegerValue(streamerSettings.get("port"), 999);
 			mysqlStreamProtocol = XContentMapValues.nodeStringValue(streamerSettings.get("protocol"), "http");
 			httpsNoVerify = XContentMapValues.nodeBooleanValue(streamerSettings.get("verify_https"), true);
 
 		} else {
 			mysqlStreamHost = "127.0.0.1";
 			mysqlStreamProtocol = "http";
-			mysqlStreamPort = 8080;
+			mysqlStreamPort = 999;
 			httpsNoVerify = false;
 		}
 
