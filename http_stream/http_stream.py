@@ -22,6 +22,9 @@ class Streamer(object):
         def content():
             for binlogevent in self.stream:
                 for row in binlogevent.rows:
+                    row['values']['updated_at'] = str(row['values']['updated_at'])
+                    row['values']['created_at'] = str(row['values']['created_at'])
+                    row['values']['id'] = base64.b64encode(row["values"]["id"])
                     if isinstance(binlogevent, DeleteRowsEvent):
                         yield json.dumps({
                           "action": "delete",
